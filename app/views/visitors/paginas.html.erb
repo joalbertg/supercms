@@ -1,0 +1,12 @@
+<h1><%= @seccion.nombre %>: Paginas</h1>
+<hr>
+
+<ul>
+  <% @paginas.each do |pagina| %>
+    <li>
+      <%= link_to pagina.nombre, pagina_path(pagina) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @paginas %>

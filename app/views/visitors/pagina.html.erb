@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <%= render_breadcrumbs %>
+      <hr>
+      <h1><%= @seccion.nombre %>: <%= @pagina.nombre %></h1>
+      <hr>
+
+      <p><%= @pagina.texto %></p>
+    </div>
+    <div class="col-md-3">
+      <%= render :partial => 'anuncios' if @mostrar_anuncio %>
+    </div>
+  </div>
+</div>

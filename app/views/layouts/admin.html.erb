@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My Application" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Application" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <%= render 'layouts/messages' %>
+    <div class="row">
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li><%= link_to 'Secciones', admin_secciones_path %></li>
+        </ul>
+      </div>
+      <div class="col-md-10">  
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @seccion, pagina], html: {class: 'form-horizontal', multipart: true} do |f| %>
+  <%= f.input :nombre, label: 'Nombre pagina', hint: 'Este es el nombre de la paginas' %>
+  <%= f.input :texto, label: 'Texto', hint: 'Este es el texto de la pagina' %>
+  <%= f.input :active, label: 'Activo', hint: 'Activar o desactivar pagina' %>
+  <%= f.input :imagen, label: 'Imagen', hint: 'JPEG, PNG, GIF' %>
+  <% unless pagina.imagen.blank? %>
+  	<%= image_tag(pagina.imagen.url) %>
+  <% end %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', admin_seccion_paginas_path(@seccion), class: 'btn btn-default' %>
+<% end %>

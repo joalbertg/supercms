@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @seccion], html: {class: 'form-horizontal', multipart: true} do |f| %>
+  <%= f.input :nombre, label: 'Nombre seccion', hint: 'Este es el nombre de la seccion' %>
+  <%= f.input :active, label: 'Activo', hint: 'Activar o desactivar seccion' %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', admin_secciones_path, class: 'btn btn-default' %>
+<% end %>
